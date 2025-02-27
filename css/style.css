@@ -37,7 +37,6 @@ main .main {
 main .quad {
     width: 250px;
     height: 250px;
-    text-align: center;
 }
 
 main .quadRed {
@@ -50,3 +49,8 @@ main .quadBeige {
     background-color: beige;
 }
 
+p {
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+}
