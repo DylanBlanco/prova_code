@@ -56,6 +56,9 @@ main .quadBlu {
 main .quadBeige {
     background-color: beige;
 }
+main .quadJs {
+    background-color: rgb(230, 184, 139);
+}
 
 p {
     font-size: 20px;
