@@ -24,6 +24,7 @@ ul li {
 
 main {
     height: calc(100vh - 50px - 50px);
+    background-color: rgb(165, 165, 165);
 }
 
 main .main {
@@ -37,6 +38,10 @@ main .main {
 main .quad {
     width: 250px;
     height: 250px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
 main .quadRed {
@@ -50,7 +55,6 @@ main .quadBeige {
 }
 
 p {
-    text-align: center;
     font-size: 20px;
     font-style: oblique;
 }
