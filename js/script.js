@@ -8,3 +8,16 @@ console.log(text);
 
 let newVar = nomeUno + ' ' + text;
 console.log(newVar);
+
+// let msg = 'ciao a tutti';
+// alert(msg);
+
+// msg = 'di nuovo ciao';
+// alert(msg);
+
+console.log(
+    `
+    ${nomeUno} ${text}
+    con js
+    `
+);
