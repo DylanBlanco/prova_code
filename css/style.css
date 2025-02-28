@@ -28,10 +28,13 @@ main {
 }
 
 main .main {
+    padding: 5% 0;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
     gap: 10%;
 }
 
