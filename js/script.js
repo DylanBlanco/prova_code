@@ -28,12 +28,28 @@ console.log(
 let somma = 10+4;
 console.log(somma);
 
-let newName = prompt('Come ti chiami?');
-console.log(newName);
 
-if(newName = true) {
-    document.getElementById('nome').innerHTML=newName;
+const numero = 3;
+let numUno = prompt('inserisci primo numero')
+let numDue = prompt('inserisci secondo nunmero');
+// if (numDue > numero) {
+//     console.log(numDue, 'è maggiore di', numero);
+// }
+// else if (numDue < numero) {
+//     console.log(numDue, 'è minore di', numero)
+// }
+// else if (numDue == numero) {
+//     console.log(numDue, 'è pari a', numero);
+// }
+// else {
+//     console.log('non è un numero');
+// }
+if (numUno && numDue == numero) {
+    console.log('hai vinto');
+}
+else if (numUno == numero && numDue != numero) {
+    console.log('avete inserito', numUno, 'e', numDue, ', ci siete quasi');
 }
 else {
-    document.getElementById('nome').innerHTML='Questa non è una stringa';
-};
+    console.log('hai perso');
+}
