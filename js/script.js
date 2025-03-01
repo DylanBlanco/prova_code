@@ -28,5 +28,12 @@ console.log(
 let somma = 10+4;
 console.log(somma);
 
-const newName = prompt('Come ti chiami?');
+let newName = prompt('Come ti chiami?');
 console.log(newName);
+
+if(newName = true) {
+    document.getElementById('nome').innerHTML=newName;
+}
+else {
+    document.getElementById('nome').innerHTML='Questa non è una stringa';
+};
