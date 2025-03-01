@@ -74,3 +74,14 @@ document.getElementById('numRandom').innerHTML = Math.random(); // restituisce n
 // Math.floor, arrotonda per difetto \ Math.ceil, arrotonda per eccesso
 document.getElementById('numRandom').innerHTML = Math.floor(Math.random() * 10 + 1); //num tra 0 e 10
 console.log('num tra 1 e 10 è:', numRandom);
+
+// style css con js
+const red = document.getElementById('esStyle');
+console.log('Red text;', red, typeof red);
+red.innerHTML = 'Testo rosso';
+red.style.color = "red";
+
+const grey = document.querySelector('esStyle');
+console.log('Grey text;', grey, typeof grey);
+// grey.innerHTML = 'Testo Grigio';
+grey.style.color = "grey"
