@@ -1,7 +1,7 @@
 document.getElementById('text').innerHTML='Hello World!';
 
-// con writeln il testo si inserisce sempre alla fine del body
-document.writeln('<h1>Hello World</h1>')
+// con writeln il testo va a finire sempre alla fine del body
+// document.writeln('<h1>Hello World</h1>')
 
 // let who = prompt('come ti chiami?');
 let who = 'dylan';
@@ -75,13 +75,17 @@ document.getElementById('numRandom').innerHTML = Math.random(); // restituisce n
 document.getElementById('numRandom').innerHTML = Math.floor(Math.random() * 10 + 1); //num tra 0 e 10
 console.log('num tra 1 e 10 è:', numRandom);
 
-// style css con js
-const red = document.getElementById('esStyle');
+// style css con js \ SELETTORI
+const red = document.getElementById('esStyle'); // possono prendere un solo elemento dall'alto
 console.log('Red text;', red, typeof red);
 red.innerHTML = 'Testo rosso';
 red.style.color = "red";
 
-const grey = document.querySelector('esStyle');
+const grey = document.querySelector('#esGrey'); // possono prendere un solo elemento dall'alto
 console.log('Grey text;', grey, typeof grey);
-// grey.innerHTML = 'Testo Grigio';
-grey.style.color = "grey"
+grey.innerHTML = 'Testo Grigio';
+grey.style.color = "grey";
+
+document.getElementsByTagName('div') // prendono più elementi
+document.getElementsByClassName('div') // prendono più elementi
+document.querySelectorAll('div') // prendono più elementi
