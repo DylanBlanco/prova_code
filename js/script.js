@@ -95,3 +95,11 @@ console.log('questa è la mia selezione:', grey.classList, typeof grey.classList
 grey.className += ' border-primary rounded'; // ricorda lo spazio dopo l'apice
 grey.style.backgroundColor = 'black';
 grey.innerHTML += ' !aggiunto!';
+
+// grey.addEventListener(evento da intercettare, cosa fare quando si verifica l'evento
+grey.addEventListener('click', function() {
+    // grey.style.backgroundColor = 'yellow';
+    // grey.style.color = 'red';
+    grey.className = 'border border-danger rounded bg-success    text-warning';
+    grey.innerHTML = 'hai fatto Click'
+});
