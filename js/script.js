@@ -89,3 +89,9 @@ grey.style.color = "grey";
 document.getElementsByTagName('div') // prendono più elementi
 document.getElementsByClassName('div') // prendono più elementi
 document.querySelectorAll('div') // prendono più elementi
+
+console.log('questa è la mia selezione:', grey.classList, typeof grey.classList);
+
+grey.className += ' border-primary rounded'; // ricorda lo spazio dopo l'apice
+grey.style.backgroundColor = 'black';
+grey.innerHTML += ' !aggiunto!';
