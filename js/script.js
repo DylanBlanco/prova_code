@@ -103,3 +103,10 @@ grey.addEventListener('click', function() {
     grey.className = 'border border-danger rounded bg-success    text-warning';
     grey.innerHTML = 'hai fatto Click'
 });
+
+const submitButton = document.getElementById('submit-button');
+submitButton.addEventListener('click', function() {
+    const nomeInput = document.getElementById('name');
+    console.log('hai inserito:', nomeInput, typeof nomeInput);
+    console.log('value:', nomeInput.value, typeof nomeInput.value);
+});
