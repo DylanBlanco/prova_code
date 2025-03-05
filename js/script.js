@@ -129,3 +129,14 @@ selectForm.addEventListener("submit", function(event) {
     const jsQuad = document.querySelector(' .quadJs');
     jsQuad.classList.add('bg-danger');
 });
+
+const btnLess = document.querySelector(' .quadRed');
+btnLess.addEventListener('click', function() {
+    if (red.classList.contains('background-color')) {
+        red.classList.remove('background-color');
+    }
+    else{
+        red.classList.add('background-color');
+
+    }
+})
