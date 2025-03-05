@@ -86,9 +86,9 @@ console.log('Grey text;', grey, typeof grey);
 grey.innerHTML = 'Testo Grigio';
 grey.style.color = "grey";
 
-document.getElementsByTagName('div') // prendono più elementi
-document.getElementsByClassName('div') // prendono più elementi
-document.querySelectorAll('div') // prendono più elementi
+document.getElementsByTagName('div'); // prendono più elementi
+document.getElementsByClassName('div'); // prendono più elementi
+document.querySelectorAll('div'); // prendono più elementi
 
 console.log('questa è la mia selezione:', grey.classList, typeof grey.classList);
 
@@ -104,9 +104,28 @@ grey.addEventListener('click', function() {
     grey.innerHTML = 'hai fatto Click'
 });
 
-const submitButton = document.getElementById('submit-button');
-submitButton.addEventListener('click', function() {
+// funzione che intercetta il click sul bottono (sbagliato in questo caso)
+// const submitButton = document.getElementById('submit-button');
+// submitButton.addEventListener("click", function() {
+//     const nomeInput = document.getElementById('name');
+//     console.log('hai inserito:', nomeInput, typeof nomeInput);
+//     console.log('value:', nomeInput.value, typeof nomeInput.value);
+
+//     const etaInput = document.getElementById('age');
+//     console.log('value:', etaInput.vaule);
+// });
+
+// funzione che intercetta la sottomissione del form
+const selectForm = document.querySelector('form');
+selectForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // previene il comportamento di default
     const nomeInput = document.getElementById('name');
     console.log('hai inserito:', nomeInput, typeof nomeInput);
     console.log('value:', nomeInput.value, typeof nomeInput.value);
+    
+    const etaInput = document.getElementById('age');
+    console.log('value:', etaInput);
+    
+    const jsQuad = document.querySelector(' .quadJs');
+    jsQuad.classList.add('bg-danger');
 });
