@@ -122,10 +122,10 @@ selectForm.addEventListener("submit", function(event) {
     const nomeInput = document.getElementById('name');
     console.log('hai inserito:', nomeInput, typeof nomeInput);
     console.log('value:', nomeInput.value, typeof nomeInput.value);
-    
+
     const etaInput = document.getElementById('age');
     console.log('value:', etaInput);
-    
+
     const jsQuad = document.querySelector(' .quadJs');
     jsQuad.classList.add('bg-danger');
 });
@@ -138,5 +138,22 @@ btnLess.addEventListener('click', function() {
     else{
         red.classList.add('background-color');
 
+    }
+})
+
+const jsButton = document.querySelector('.js-button');
+jsButton.className = 'btn btn-success border shadow-lg';
+jsButton.classList.add('border-dark');
+
+const jsFunClick = document.querySelector('.js-function-click');
+jsFunClick.className = 'd-none';
+
+jsButton.addEventListener('click', function() {
+    if (jsFunClick.classList.contains('d-none')) {
+        jsFunClick.classList.remove('d-none');
+    }
+    else {
+        const pNone = document.getElementById('p-none');
+        pNone.innerHTML = 'Hai già cliccato!';
     }
 })
