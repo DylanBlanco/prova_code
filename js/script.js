@@ -156,4 +156,7 @@ jsButton.addEventListener('click', function() {
         const pNone = document.getElementById('p-none');
         pNone.innerHTML = 'Hai già cliccato!';
     }
-})
+});
+
+const quadjsfor = document.querySelector('.quad-js-for');
+quadjsfor.className = 'bg-warning';
