@@ -42,10 +42,8 @@ main .quad {
     width: 250px;
     height: 250px;
     overflow-y: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    text-align: center;
+    padding: 20px;
 }
 
 main .quadRed {

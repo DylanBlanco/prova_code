@@ -159,4 +159,15 @@ jsButton.addEventListener('click', function() {
 });
 
 const quadjsfor = document.querySelector('.quad-js-for');
-quadjsfor.className = 'bg-warning';
+quadjsfor.className = 'bg-secondary-subtle';
+const jsButtonFor = document.querySelector('.js-button-for');
+jsButtonFor.className = 'btn btn-dark';
+
+jsButtonFor.addEventListener('click', function() {
+    for (let i=0; i<11; i++) {
+        numRandomJs = Math.floor(Math.random() * 10);
+        console.log('numRandom dall 1 al 10:',numRandom, typeof numRandom);
+    };
+    const randomNumJs = document.getElementById('random-num-js');
+    randomNumJs.innerHTML = parseInt.jsButtonFor;
+});
