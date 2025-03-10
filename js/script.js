@@ -160,14 +160,14 @@ jsButton.addEventListener('click', function() {
 
 const quadjsfor = document.querySelector('.quad-js-for');
 quadjsfor.className = 'bg-secondary-subtle';
-const jsButtonFor = document.querySelector('.js-button-for');
+const jsButtonFor = document.getElementById('js-button-for');
 jsButtonFor.className = 'btn btn-dark';
 
 jsButtonFor.addEventListener('click', function() {
-    for (let i=0; i<11; i++) {
-        numRandomJs = Math.floor(Math.random() * 10);
-        console.log('numRandom dall 1 al 10:',numRandom, typeof numRandom);
+    let randomNumJs = document.getElementById('random-num-js');
+    for (let i=0; i<5; i++) {
+        let randomNumJs = Math.floor(Math.random() * 10);
+        console.log('numRandom dall 1 al 10:',randomNumJs, typeof randomNumJs);
     };
-    const randomNumJs = document.getElementById('random-num-js');
-    randomNumJs.innerHTML = parseInt.jsButtonFor;
+    randomNumJs.innerHTML = 'Hai generato 5 numeri casuali', parseInt.randomNumJs;
 });
