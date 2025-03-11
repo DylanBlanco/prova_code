@@ -158,22 +158,26 @@ jsButton.addEventListener('click', function() {
     }
 });
 
-const quadjsfor = document.querySelector('.quad-js-for');
-quadjsfor.className = 'bg-secondary-subtle';
-const jsButtonFor = document.getElementById('js-button-for');
-jsButtonFor.className = 'btn btn-dark';
+// GENERA 5NUM CASUALI
+// const quadjsfor = document.querySelector('.quad-js-for');
+// quadjsfor.className = 'bg-secondary-subtle';
+// const jsButtonFor = document.getElementById('js-button-for');
+// jsButtonFor.className = 'btn btn-dark';
 
-jsButtonFor.addEventListener('click', function() {
-    let randomNumJs = document.getElementById('random-num-js');
-    for (let i=1; i<6; i++) {
-        let randomNumJs = Math.floor(Math.random() * 10);
-        console.log('numRandom dall 1 al 10:',randomNumJs, typeof randomNumJs);
-        let randomNumLiast = document.getElementById('random-num-list');
-        randomNumLiast.innerHTML += '<p>' + (randomNumJs) + '</p>' + '<hr>';
-    };
-});
+// jsButtonFor.addEventListener('click', function() {
+//     let randomNumJs = document.getElementById('random-num-js');
+//     for (let i=1; i<6; i++) {
+//         let randomNumJs = Math.floor(Math.random() * 10);
+//         console.log('numRandom dall 1 al 10:',randomNumJs, typeof randomNumJs);
+//         let randomNumList = document.getElementById('random-num-list');
+//         const element = `<p> ${randomNumJs} </p> <hr>`;
+//         // const element = '<p>' + (randomNumJs) + '</p>' + '<hr>';
+//         // randomNumList.innerHTML += '<p>' + (randomNumJs) + '</p>' + '<hr>';
+//         randomNumList.innerHTML += element;
+//     };
+// });
 
-//OPPURE usandi il ciclo while
+// OPPURE usandO il ciclo while
 // jsButtonFor.addEventListener('click', function() {
 //     let randomNumJs = document.getElementById('random-num-js');
 //     let i = 1;
@@ -185,3 +189,26 @@ jsButtonFor.addEventListener('click', function() {
 //         i++;
 //     }
 // });
+
+
+// GENERA 5 NUMERI CASUALI E DIVERSI TRA LORO
+const quadjsfor = document.querySelector('.quad-js-for');
+quadjsfor.className = 'bg-secondary-subtle';
+const jsButtonFor = document.getElementById('js-button-for');
+jsButtonFor.className = 'btn btn-dark';
+
+jsButtonFor.addEventListener('click', function() {
+    let randomNumList = document.getElementById('random-num-list');
+    randomNumList.innerHTML = ''; // Svuota la lista prima di generare nuovi numeri
+    let generatedNumbers = new Set(); // Crea un Set per memorizzare i numeri generati ed evitare duplicati
+    
+    while (generatedNumbers.size < 5) { // Continua a generare numeri finché il Set non contiene 5 numeri unici
+        // Creazione di un numero casuale e verifica dell'unicità
+        let randomNum = Math.floor(Math.random() * 10);
+        if (!generatedNumbers.has(randomNum)) {  // Controlla se il numero è già presente nel Set
+            generatedNumbers.add(randomNum);  // Se il numero non è già stato generato, lo aggiunge al Set
+            console.log('numRandom dall 1 al 10:', randomNum, typeof randomNum);
+            randomNumList.innerHTML += '<p>' + randomNum + '</p>' + '<hr>';
+        }
+    }
+});
