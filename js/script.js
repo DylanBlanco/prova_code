@@ -172,3 +172,16 @@ jsButtonFor.addEventListener('click', function() {
         randomNumLiast.innerHTML += '<p>' + (randomNumJs) + '</p>' + '<hr>';
     };
 });
+
+//OPPURE usandi il ciclo while
+// jsButtonFor.addEventListener('click', function() {
+//     let randomNumJs = document.getElementById('random-num-js');
+//     let i = 1;
+//     while (i < 6) {
+//         let randomNumJs = Math.floor(Math.random() * 10);
+//         console.log('numRandom dall 1 al 10:', randomNumJs, typeof randomNumJs);
+//         let randomNumList = document.getElementById('random-num-list');
+//         randomNumList.innerHTML += '<p>' + randomNumJs + '</p>' + '<hr>';
+//         i++;
+//     }
+// });
