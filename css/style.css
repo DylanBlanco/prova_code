@@ -63,3 +63,21 @@ p {
     font-size: 20px;
     font-style: oblique;
 }
+
+/* 
+    MyClas JS
+*/
+
+.car-list-style {
+    background-color: #FFBC5A;
+    padding: 2% 4%;
+    border: 1px dashed rgb(144, 143, 143);
+}
+main img {
+    display: none;
+    width: 100%;
+}
+
+main img.active {
+    display: block;
+}
