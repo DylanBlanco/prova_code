@@ -214,46 +214,28 @@ jsButtonFor.addEventListener('click', function() {
 });
 
 // ARRAY
-let carList = [
-    // {
-    //     brand: 'fiat',
-    //     model: 'punto',
-    //     setup: 'berlina',
-    // },
-    // {
-    //     brand: 'opel',
-    //     model: 'corsa',
-    //     setup: 'style',
-    // },
-    // {
-    //     brand: 'peugeot',
-    //     model: '208',
-    //     setup: 'gt',
-    // },
-    // {
-    //     brand: 'peugeot',
-    //     model: '2008',
-    //     setup: 'allure',
-    // },
-    // {
-    //     brand: 'opel',
-    //     model: 'crossland',
-    //     setup: 'allure pack',
-    // },
+const carListElement = document.querySelector('.car-list-element');
+const carListImg = [
     'img/Fiat_500.jpeg',
     'img/opel_corsa.webp',
     'img/Peugeot_208.webp',
     'img/tesla-model-y.jpg'
 ];
 
-const carListElement = document.getElementById('car-list-element');
-carListElement.classList.add('car-list-style');
-
-for (let i=0; i<carList.length; i++) {
-    if(i == 0) {
-        carListElement.innerHTML += `<img src="${carList[i]}" class="active">`;
+for (let i = 0; i < carListImg.length ; i++) {
+    console.log(carListImg[i]);
+    if (i == 0) {
+        carListElement.innerHTML += `<img src="${carListImg[i]}" class="active">`;
     }
     else {
-        carListElement.innerHTML += `<img src="${carList[i]}"`;
+        carListElement.innerHTML += `<img src="${carListImg[i]}">`;
     }
-}
+};
+
+let currentImgActive = 1;
+const buttonNext = document.getElementById('button-next');
+buttonNext.addEventListener('click', function() {
+    document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
+    currentImgActive++;
+    document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+})

@@ -67,17 +67,28 @@ p {
 /* 
     MyClas JS
 */
-
-.car-list-style {
-    background-color: #FFBC5A;
-    padding: 2% 4%;
-    border: 1px dashed rgb(144, 143, 143);
-}
 main img {
     display: none;
     width: 100%;
+    background-color: #FFBC5A;
+    border: 1px dashed rgb(144, 143, 143);
 }
 
 main img.active {
     display: block;
+}
+
+.quadJs {
+    position: relative;
+}
+
+.quadJs .button-prev {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+}
+.quadJs .button-next {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
 }
