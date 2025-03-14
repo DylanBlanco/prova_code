@@ -236,36 +236,64 @@ allImgs = document.querySelectorAll('.car-list-element > img');  // querySelecto
 console.log(allImgs, typeof allImgs);
 
 // let currentImgActive = 1;
+/*
+const buttonNext = document.getElementById('button-next');
+    buttonNext.addEventListener('click', function() {
+        // if (currentImgActive < carListImg.length) {
+            allImgs[currentImgActive].classList.remove('active');
+        if (currentImgActive < carListImg.length - 1) {
+            // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
+            // allImgs[currentImgActive].classList.remove('active');
+            currentImgActive++;
+            // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+            // allImgs[currentImgActive].classList.add('active');
+        }
+        else {
+            // allImgs[currentImgActive].classList.remove('active');
+            currentImgActive = 0;
+            // allImgs[currentImgActive].classList.add('active');
+        }
+        allImgs[currentImgActive].classList.add('active');
+    });
+    const buttonPrev = document.getElementById('button-prev');
+    buttonPrev.addEventListener('click', function() {
+        // if (currentImgActive > 1) {
+            if (currentImgActive > 0) {
+                // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
+            allImgs[currentImgActive].classList.remove('active');
+            currentImgActive--;
+            // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+            allImgs[currentImgActive].classList.add('active');
+        }
+        else {
+            allImgs[currentImgActive].classList.remove('active');
+            currentImgActive = carListImg.length - 1;
+            allImgs[currentImgActive].classList.add('active');
+        }
+    });
+*/
+
+//  CODICE SEMPLIFICATO
 let currentImgActive = 0;
 const buttonNext = document.getElementById('button-next');
 buttonNext.addEventListener('click', function() {
-    // if (currentImgActive < carListImg.length) {
-    if (currentImgActive < carListImg.length - 1) {
-        // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
         allImgs[currentImgActive].classList.remove('active');
+    if (currentImgActive < carListImg.length - 1) {
         currentImgActive++;
-        // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
-        allImgs[currentImgActive].classList.add('active');
     }
     else {
-        allImgs[currentImgActive].classList.remove('active');
         currentImgActive = 0;
-        allImgs[currentImgActive].classList.add('active');
     }
+    allImgs[currentImgActive].classList.add('active');
 });
 const buttonPrev = document.getElementById('button-prev');
 buttonPrev.addEventListener('click', function() {
-    // if (currentImgActive > 1) {
-    if (currentImgActive > 0) {
-        // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
-        allImgs[currentImgActive].classList.remove('active');
+    allImgs[currentImgActive].classList.remove('active');
+        if (currentImgActive > 0) {
         currentImgActive--;
-        // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
-        allImgs[currentImgActive].classList.add('active');
     }
     else {
-        allImgs[currentImgActive].classList.remove('active');
         currentImgActive = carListImg.length - 1;
-        allImgs[currentImgActive].classList.add('active');
     }
+    allImgs[currentImgActive].classList.add('active');
 });
