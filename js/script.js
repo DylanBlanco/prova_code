@@ -247,6 +247,11 @@ buttonNext.addEventListener('click', function() {
         // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
         allImgs[currentImgActive].classList.add('active');
     }
+    else {
+        allImgs[currentImgActive].classList.remove('active');
+        currentImgActive = 0;
+        allImgs[currentImgActive].classList.add('active');
+    }
 });
 const buttonPrev = document.getElementById('button-prev');
 buttonPrev.addEventListener('click', function() {
@@ -256,6 +261,11 @@ buttonPrev.addEventListener('click', function() {
         allImgs[currentImgActive].classList.remove('active');
         currentImgActive--;
         // document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+        allImgs[currentImgActive].classList.add('active');
+    }
+    else {
+        allImgs[currentImgActive].classList.remove('active');
+        currentImgActive = carListImg.length - 1;
         allImgs[currentImgActive].classList.add('active');
     }
 });
