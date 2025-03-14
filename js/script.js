@@ -235,7 +235,17 @@ for (let i = 0; i < carListImg.length ; i++) {
 let currentImgActive = 1;
 const buttonNext = document.getElementById('button-next');
 buttonNext.addEventListener('click', function() {
-    document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
-    currentImgActive++;
-    document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
-})
+    if (currentImgActive < carListImg.length) {
+        document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
+        currentImgActive++;
+        document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+    }
+});
+const buttonPrev = document.getElementById('button-prev');
+buttonPrev.addEventListener('click', function() {
+    if (currentImgActive > 1) {
+        document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.remove('active');
+        currentImgActive--;
+        document.querySelector('.car-list-element > img:nth-child('+ currentImgActive +')').classList.add('active');
+    }
+});
