@@ -298,29 +298,48 @@ buttonPrev.addEventListener('click', function() {
     allImgs[currentImgActive].classList.add('active');
 });
 
-let numGuess = parseInt(prompt('Inserisci il numero da indovinare da 1 a 10:'));
-console.log('hai inserito:', numGuess);
-while (isNaN(numGuess)) {
-    numGuess = parseInt(prompt('Valore non valido, iserisci un numero:'));
-};
+// //  CICLO WHILE
+// let numGuess = parseInt(prompt('Inserisci il numero da indovinare da 1 a 10:'));
+// console.log('hai inserito:', numGuess);
+// while (isNaN(numGuess)) {
+//     numGuess = parseInt(prompt('Valore non valido, iserisci un numero:'));
+// };
 
-const randomNumGuess = Math.floor(Math.random() * 11);
-console.log('numrandom:', randomNumGuess);
-if (numGuess == randomNumGuess) {
-    const winGuess = document.createElement('div');
-    winGuess.innerHTML = `
-    <h3>Hai inserito:</h3>
-    <p>${numGuess}</p>
-    <h3>Indovinato. Hai Vinto!!!</h3>
-    `;
-    document.getElementById('create-p').append(winGuess);
-}
-else {
-    const winGuess = document.createElement('div');
-    winGuess.innerHTML = `
-    <h3>Hai inserito:</h3>
-    <p>${numGuess}</p>
-    <h3>Non hai Indovinato. Hai Perso!</h3>
-    `;
-    document.getElementById('create-p').append(winGuess);
-};
+// const randomNumGuess = Math.floor(Math.random() * 11);
+// console.log('numrandom:', randomNumGuess);
+// if (numGuess == randomNumGuess) {
+//     const winGuess = document.createElement('div');
+//     winGuess.innerHTML = `
+//     <h3>Hai inserito:</h3>
+//     <p>${numGuess}</p>
+//     <h3>Indovinato. Hai Vinto!!!</h3>
+//     `;
+//     document.getElementById('create-p').append(winGuess);
+// }
+// else {
+//     const winGuess = document.createElement('div');
+//     winGuess.innerHTML = `
+//     <h3>Hai inserito:</h3>
+//     <p>${numGuess}</p>
+//     <h3>Non hai Indovinato. Hai Perso!</h3>
+//     `;
+//     document.getElementById('create-p').append(winGuess);
+// };
+
+// //  JS SWITCH
+
+// const usrePosition = parseInt(prompt('In che posizione sei arriavto?'))
+// switch(usrePosition) {
+//     case 1:
+//         alert('Sei arriavto primo');
+//         break;
+//     case 2:
+//         alert('Sei arriavto secondo');
+//         break;
+//     case 3:
+//         alert('Sei arriavto terzo');
+//         break;
+//     default:
+//         alert('Sei arriavto in posizione:' + usrePosition);
+//         break;
+// };
