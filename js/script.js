@@ -298,6 +298,29 @@ buttonPrev.addEventListener('click', function() {
     allImgs[currentImgActive].classList.add('active');
 });
 
-const para = document.createElement("p");
-para.innerHTML = "This is a paragraph.";
-document.getElementById('create-p').append(para);
+let numGuess = parseInt(prompt('Inserisci il numero da indovinare da 1 a 10:'));
+console.log('hai inserito:', numGuess);
+while (isNaN(numGuess)) {
+    numGuess = parseInt(prompt('Valore non valido, iserisci un numero:'));
+};
+
+const randomNumGuess = Math.floor(Math.random() * 11);
+console.log('numrandom:', randomNumGuess);
+if (numGuess == randomNumGuess) {
+    const winGuess = document.createElement('div');
+    winGuess.innerHTML = `
+    <h3>Hai inserito:</h3>
+    <p>${numGuess}</p>
+    <h3>Indovinato. Hai Vinto!!!</h3>
+    `;
+    document.getElementById('create-p').append(winGuess);
+}
+else {
+    const winGuess = document.createElement('div');
+    winGuess.innerHTML = `
+    <h3>Hai inserito:</h3>
+    <p>${numGuess}</p>
+    <h3>Non hai Indovinato. Hai Perso!</h3>
+    `;
+    document.getElementById('create-p').append(winGuess);
+};
