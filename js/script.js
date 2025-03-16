@@ -297,3 +297,7 @@ buttonPrev.addEventListener('click', function() {
     }
     allImgs[currentImgActive].classList.add('active');
 });
+
+const para = document.createElement("p");
+para.innerHTML = "This is a paragraph.";
+document.getElementById('create-p').append(para);
