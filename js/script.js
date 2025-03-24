@@ -369,22 +369,34 @@ calcJs.innerHTML = `
 const sommaForm = document.querySelector('.somma-form');
 sommaForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    const numUno = document.getElementById('num-uno');
+    
+    // Ottieni i valori dagli input
+    const numUno = document.getElementById('num-uno').value.trim();  // .TRIM - SERVE A EVITARE CAMPI VUOTI
     console.log('num uno:', numUno.value, typeof numUno.value);
-    const numDue = document.getElementById('num-due');
+    const numDue = document.getElementById('num-due').value.trim();  // .TRIM - SERVE A EVITARE CAMPI VUOTI
     console.log('num due:', numDue.value, typeof numDue.value);
 
-    const resultSomma = document.getElementById('result-somma');
     
-    resultSomma.innerHTML = `
+    // Converte i valori in numeri
+    const numero1 = Number(numUno);
+    const numero2 = Number(numDue);
+    
+
+    
+    // Esegui la somma
+    const risultato = sommaNumeri(numero1, numero2);
+
+   // Mostra il risultato
+   document.getElementById('result-somma').innerHTML = `
         <div>
-            <h3> ${sommaNumeri} </h3>
+            <h3>Risultato: ${risultato}</h3>
         </div>
-    `
+    `;
 })
 
+// Funzione per sommare due numeri
 function sommaNumeri(numUno, numDue) {
-    return Number(numUno) + Number(numDue); // questa funzione restituisce le stringhe inserite dagli input in numeri
+    return numUno + numDue;
 }
 
 // // funzione che intercetta la sottomissione del form
