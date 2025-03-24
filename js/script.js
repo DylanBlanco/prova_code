@@ -377,6 +377,14 @@ sommaForm.addEventListener("submit", function(event) {
     console.log('num due:', numDue.value, typeof numDue.value);
 
     
+    // Controllo se i campi sono vuoti
+    if (numUno === "" || numDue === "") {
+        document.getElementById('result-somma').innerHTML = `
+            <div class="text-danger">Inserisci entrambi i numeri!</div>
+        `;
+        return;
+    }
+    
     // Converte i valori in numeri
     const numero1 = Number(numUno);
     const numero2 = Number(numDue);
