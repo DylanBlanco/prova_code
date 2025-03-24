@@ -420,22 +420,36 @@ arrowFuncDiv.innerHTML = `
     <h4>
         Vuoi cambiare colore?
     </h4>
+    <select id="color-select" class="form-select mb-2">
+        <option value="">-- Seleziona un colore --</option>
+        <option value="bg-primary">Blu</option>
+        <option value="bg-success">Verde</option>
+        <option value="bg-danger">Rosso</option>
+        <option value="bg-warning">Giallo</option>
+        <option value="bg-info">Azzurro</option>
+    </select>
     <button class="btn btn-success btn-change-color">Clicca qui</button>
 `;
 
 const btnColorChange = document.querySelector('.btn-change-color');
+const colorSelect = document.getElementById('color-select');
+
 btnColorChange.addEventListener("click", function() {
     colorDelete();
-    arrowFuncDiv.classList.add('bg-primary-subtle');
+    const selectedColor = colorSelect.value;
+    
+    if (selectedColor) {
+        arrowFuncDiv.classList.add(selectedColor);
+    }
 });
+
+// Funzione per rimuovere i colori precedenti
+const colorDelete = () => {
+    arrowFuncDiv.className = ''; // Rimuove tutte le classi
+    arrowFuncDiv.classList.add('quad'); // Mantiene una classe di base (se necessaria)
+};
 // //  Color delete function
 // function colorDelete() {
 //     arrowFuncDiv.className = ''; // Cancella tutte le classi
 //     arrowFuncDiv.classList.add('quad');
 // };
-
-//  Color delete function - Arrow Function
-const colorDelete = () => {
-    arrowFuncDiv.className = ''; // Cancella tutte le classi
-    arrowFuncDiv.classList.add('quad');
-};
