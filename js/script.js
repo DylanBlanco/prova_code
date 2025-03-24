@@ -454,3 +454,18 @@ const colorDelete = () => {
     arrowFuncDiv.className = ''; // Rimuove tutte le classi
     arrowFuncDiv.classList.add('quad'); // Mantiene una classe di base
 };
+
+// TIMING FUNCTIONS
+document.getElementById('async-div').innerHTML = `
+    <h5>
+        Qui c'è un messaggio Asincrono:
+    </h5>
+`;
+function msgAsync(){
+    const container = document.getElementById('async-div');
+    const newDiv = document.createElement('div'); // Crea un nuovo <div>
+    newDiv.classList.add('nuovo-div'); // Aggiunge una classe
+    newDiv.textContent = 'Questo è un nuovo div'; // Aggiunge testo
+
+    container.appendChild(newDiv); // Aggiunge il div dentro #contenitore
+};
