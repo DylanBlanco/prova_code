@@ -420,14 +420,20 @@ arrowFuncDiv.innerHTML = `
     <h4>
         Vuoi cambiare colore?
     </h4>
-    <button class="btn btn-success btn-change">Clicca qui</button>
-`
+    <button class="btn btn-success btn-change-color">Clicca qui</button>
+`;
 
+const btnColorChange = document.querySelector('.btn-change-color');
+btnColorChange.addEventListener("click", function() {
+    colorDelete();
+    arrowFuncDiv.classList.add('bg-primary-subtle');
+});
 // //  Color delete function
 // function colorDelete() {
 //     arrowFuncDiv.className = ''; // Cancella tutte le classi
 //     arrowFuncDiv.classList.add('quad');
 // };
+
 //  Color delete function - Arrow Function
 const colorDelete = () => {
     arrowFuncDiv.className = ''; // Cancella tutte le classi
