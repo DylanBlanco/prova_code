@@ -421,7 +421,7 @@ arrowFuncDiv.innerHTML = `
         Vuoi cambiare colore?
     </h4>
     <select id="color-select" class="form-select mb-2">
-        <option value="">-- Seleziona un colore --</option>
+        <option value="">-- Rimuovi colore --</option>
         <option value="bg-primary">Blu</option>
         <option value="bg-success">Verde</option>
         <option value="bg-danger">Rosso</option>
@@ -435,21 +435,22 @@ const btnColorChange = document.querySelector('.btn-change-color');
 const colorSelect = document.getElementById('color-select');
 
 btnColorChange.addEventListener("click", function() {
-    colorDelete();
-    const selectedColor = colorSelect.value;
+    colorDelete();  // Richiama Function colorDelete
+    const selectedColor = colorSelect.value;  // Seleziona Valore(value) della Select
     
+    // Se è stata selezionata una option aggiunge il Value corrispettivo
     if (selectedColor) {
         arrowFuncDiv.classList.add(selectedColor);
-    }
+    };
 });
-
-// Funzione per rimuovere i colori precedenti
-const colorDelete = () => {
-    arrowFuncDiv.className = ''; // Rimuove tutte le classi
-    arrowFuncDiv.classList.add('quad'); // Mantiene una classe di base (se necessaria)
-};
 // //  Color delete function
 // function colorDelete() {
 //     arrowFuncDiv.className = ''; // Cancella tutte le classi
 //     arrowFuncDiv.classList.add('quad');
 // };
+
+// Color delete Arrow function
+const colorDelete = () => {
+    arrowFuncDiv.className = ''; // Rimuove tutte le classi
+    arrowFuncDiv.classList.add('quad'); // Mantiene una classe di base
+};
