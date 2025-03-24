@@ -412,19 +412,24 @@ sommaForm.addEventListener("submit", function(event) {
 // Funzione per sommare due numeri
 function sommaNumeri(numUno, numDue) {
     return numUno + numDue;
-}
+};
 
-// // funzione che intercetta la sottomissione del form
-// const selectForm = document.querySelector('form');
-// selectForm.addEventListener("submit", function(event) {
-//     event.preventDefault(); // previene il comportamento di default
-//     const nomeInput = document.getElementById('name');
-//     console.log('hai inserito:', nomeInput, typeof nomeInput);
-//     console.log('value:', nomeInput.value, typeof nomeInput.value);
+//  ARROW FUNCTION
+const arrowFuncDiv =  document.getElementById('arrow-func-div');
+arrowFuncDiv.innerHTML = `
+    <h4>
+        Vuoi cambiare colore?
+    </h4>
+    <button class="btn btn-success btn-change">Clicca qui</button>
+`
 
-//     const etaInput = document.getElementById('age');
-//     console.log('value:', etaInput);
-
-//     const jsQuad = document.querySelector(' .quadJs');
-//     jsQuad.classList.add('bg-danger');
-// });
+// //  Color delete function
+// function colorDelete() {
+//     arrowFuncDiv.className = ''; // Cancella tutte le classi
+//     arrowFuncDiv.classList.add('quad');
+// };
+//  Color delete function - Arrow Function
+const colorDelete = () => {
+    arrowFuncDiv.className = ''; // Cancella tutte le classi
+    arrowFuncDiv.classList.add('quad');
+};
