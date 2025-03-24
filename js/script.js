@@ -353,29 +353,39 @@ calcJs.innerHTML = `
             Inserisci i numeri da calcolare
         </h4>
     </div>
-    <form class="input-group somma-form">
-        <span class="input-group-text px-1">Calcola</span>
-        <input type="number" id="num-uno" name="numUno" class="form-control px-3">
-        <input type="number" id="num-due" name="numDue" class="form-control px-3">
-        <button type="submit" class="btn btn-primary">Somma</button>
+    <form class="somma-form mb-2">
+        <div class="input-group mb-2">
+            <span class="input-group-text">Calcola</span>
+            <input type="number" id="num-uno" name="numUno" class="form-control">
+            <input type="number" id="num-due" name="numDue" class="form-control">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Somma</button>
+        </div>
     </form>
-    <hr class="border border-primary border-2 opacity-75">
-    <div id="result">qwd</div>
+    <div id="result-somma" class="bg-light-subtle shadow rounded"></div>
 `;
 
-const sommaForm = document.querySelector('somma-form');
-sommaForm,addEventListener("submit", function(event) {
+const sommaForm = document.querySelector('.somma-form');
+sommaForm.addEventListener("submit", function(event) {
     event.preventDefault();
     const numUno = document.getElementById('num-uno');
     console.log('num uno:', numUno.value, typeof numUno.value);
     const numDue = document.getElementById('num-due');
     console.log('num due:', numDue.value, typeof numDue.value);
+
+    const resultSomma = document.getElementById('result-somma');
+    
+    resultSomma.innerHTML = `
+        <div>
+            <h3> ${sommaNumeri} </h3>
+        </div>
+    `
 })
 
-function sommaNumeri (numUno, numDue) {
-    const risultato = numUno + numDue;
-    return risultato;
-};
+function sommaNumeri(numUno, numDue) {
+    return Number(numUno) + Number(numDue); // questa funzione restituisce le stringhe inserite dagli input in numeri
+}
 
 // // funzione che intercetta la sottomissione del form
 // const selectForm = document.querySelector('form');
