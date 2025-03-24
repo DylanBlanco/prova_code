@@ -381,6 +381,13 @@ sommaForm.addEventListener("submit", function(event) {
     const numero1 = Number(numUno);
     const numero2 = Number(numDue);
     
+    // Controllo che siano effettivamente numeri
+    if (isNaN(numero1) || isNaN(numero2)) {  // isNaN - Verifica che i valori siano numeri validi
+        document.getElementById('result-somma').innerHTML = `
+            <div class="text-danger">Inserisci solo numeri validi!</div>
+        `;
+        return;
+    }
 
     
     // Esegui la somma
