@@ -307,7 +307,7 @@ buttonPrev.addEventListener('click', function() {
 
 // const randomNumGuess = Math.floor(Math.random() * 11);
 // console.log('numrandom:', randomNumGuess);
-// if (numGuess == randomNumGuess) {
+// if (numGuess == randomNumGuess) {    
 //     const winGuess = document.createElement('div');
 //     winGuess.innerHTML = `
 //     <h3>Hai inserito:</h3>
@@ -343,3 +343,27 @@ buttonPrev.addEventListener('click', function() {
 //         alert('Sei arriavto in posizione:' + usrePosition);
 //         break;
 // };
+
+// JS FUNCTION
+
+const calcJs = document.getElementById('calc-js');
+calcJs.innerHTML = `
+    <div class="mb-3">
+        <h4>
+            Inserisci i numeri da calcolare
+        </h4>
+    </div>
+    <form class="input-group">
+        <span class="input-group-text">Calcola</span>
+        <input type="text" id="numUno" name="numUno" class="form-control">
+        <input type="text" id="numDue" name="numDue" class="form-control">
+        <button type="submit" class="btn btn-primary">Somma</button>
+    </form>
+    <hr class="border border-primary border-2 opacity-75">
+    <div id="result">qwd</div>
+`;
+
+function sommaNumeri (numUno, numDue) {
+    const risultato = numUno + numDue;
+    return risultato;
+};
