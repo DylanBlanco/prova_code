@@ -353,17 +353,41 @@ calcJs.innerHTML = `
             Inserisci i numeri da calcolare
         </h4>
     </div>
-    <form class="input-group">
-        <span class="input-group-text">Calcola</span>
-        <input type="text" id="numUno" name="numUno" class="form-control">
-        <input type="text" id="numDue" name="numDue" class="form-control">
+    <form class="input-group somma-form">
+        <span class="input-group-text px-1">Calcola</span>
+        <input type="number" id="num-uno" name="numUno" class="form-control px-3">
+        <input type="number" id="num-due" name="numDue" class="form-control px-3">
         <button type="submit" class="btn btn-primary">Somma</button>
     </form>
     <hr class="border border-primary border-2 opacity-75">
     <div id="result">qwd</div>
 `;
 
+const sommaForm = document.querySelector('somma-form');
+sommaForm,addEventListener("submit", function(event) {
+    event.preventDefault();
+    const numUno = document.getElementById('num-uno');
+    console.log('num uno:', numUno.value, typeof numUno.value);
+    const numDue = document.getElementById('num-due');
+    console.log('num due:', numDue.value, typeof numDue.value);
+})
+
 function sommaNumeri (numUno, numDue) {
     const risultato = numUno + numDue;
     return risultato;
 };
+
+// // funzione che intercetta la sottomissione del form
+// const selectForm = document.querySelector('form');
+// selectForm.addEventListener("submit", function(event) {
+//     event.preventDefault(); // previene il comportamento di default
+//     const nomeInput = document.getElementById('name');
+//     console.log('hai inserito:', nomeInput, typeof nomeInput);
+//     console.log('value:', nomeInput.value, typeof nomeInput.value);
+
+//     const etaInput = document.getElementById('age');
+//     console.log('value:', etaInput);
+
+//     const jsQuad = document.querySelector(' .quadJs');
+//     jsQuad.classList.add('bg-danger');
+// });
