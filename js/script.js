@@ -461,11 +461,15 @@ document.getElementById('async-div').innerHTML = `
         Qui c'è un messaggio Asincrono:
     </h5>
 `;
-function msgAsync(){
+
+// Function con appendChild
+const msgAsync = () => {
     const container = document.getElementById('async-div');
     const newDiv = document.createElement('div'); // Crea un nuovo <div>
     newDiv.classList.add('nuovo-div'); // Aggiunge una classe
-    newDiv.textContent = 'Questo è un nuovo div'; // Aggiunge testo
+    newDiv.textContent = 'Questo è un messaggio asincrono'; // Aggiunge testo
 
     container.appendChild(newDiv); // Aggiunge il div dentro #contenitore
 };
+    
+setTimeout(msgAsync, 5000);
