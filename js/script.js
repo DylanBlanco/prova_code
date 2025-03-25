@@ -498,9 +498,9 @@ for (let i = 0; i < platformVid.length ; i++) {
 };
 setInterval(platformVidCarousel, 2000);
 
+const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
+let platformVidActive = 0;
 function platformVidCarousel() {
-    const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
-    let platformVidActive = 0;
     allImgCarouselBoxImg[platformVidActive].classList.remove('active');
     if (platformVidActive < platformVid.length - 1) {
         platformVidActive ++;
