@@ -456,12 +456,15 @@ const colorDelete = () => {
 };
 
 // TIMING FUNCTIONS
+
 document.getElementById('async-div').innerHTML = `
     <h5>
         Qui c'è un messaggio Asincrono:
     </h5>
 `;
-//  SetTimeout
+
+//  SetTimeout -- Esegue una sola volta dopo un ritardo
+
 setTimeout(msgAsync, 5000);
 
 // Function con appendChild
@@ -474,7 +477,7 @@ function msgAsync() {
     container.appendChild(newDiv); // Aggiunge il div dentro #contenitore
 };
 
-// SetInterval
+// SetInterval -- Esegue più volte a intervalli regolari
 
 const platformVid = [
     './img/ntflx.jpg',
@@ -493,35 +496,17 @@ for (let i = 0; i < platformVid.length ; i++) {
         carouselBoxImg.innerHTML += `<img src="${platformVid[i]}">`;
     }
 };
+setInterval(platformVidCarousel, 2000);
 
-let platformVidActive = 0;
-if (platformVidActive < platformVid.length - 1) {
-    platformVidActive ++;
-}
-else {
-    platformVidActive = 0
+function platformVidCarousel() {
+    const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
+    let platformVidActive = 0;
+    allImgCarouselBoxImg[platformVidActive].classList.remove('active');
+    if (platformVidActive < platformVid.length - 1) {
+        platformVidActive ++;
+    }
+    else {
+        platformVidActive = 0
+    };
+    allImgCarouselBoxImg[platformVidActive].classList.add('active');
 };
-
-// let currentImgActive = 0;
-// const buttonNext = document.getElementById('button-next');
-// buttonNext.addEventListener('click', function() {
-//         allImgs[currentImgActive].classList.remove('active');
-//     if (currentImgActive < carListImg.length - 1) {
-//         currentImgActive++;
-//     }
-//     else {
-//         currentImgActive = 0;
-//     }
-//     allImgs[currentImgActive].classList.add('active');
-// });
-// const buttonPrev = document.getElementById('button-prev');
-// buttonPrev.addEventListener('click', function() {
-//     allImgs[currentImgActive].classList.remove('active');
-//         if (currentImgActive > 0) {
-//         currentImgActive--;
-//     }
-//     else {
-//         currentImgActive = carListImg.length - 1;
-//     }
-//     allImgs[currentImgActive].classList.add('active');
-// });
