@@ -498,11 +498,19 @@ for (let i = 0; i < platformVid.length ; i++) {
     }
 };
 
-// Avvia il carosello con intervallo di 2 secondi
-setInterval(platformVidCarousel, 1500);
+// Avvia il carosello con intervallo di 1.5 secondi
+const intervalId  = setInterval(() => {
+    platformVidCarousel();
+}, 1500);
+// setInterval(platformVidCarousel, 1500);
+
+// Interruzione del setInterval dopo 12 secondi
+setTimeout(() => {
+    clearInterval(intervalId); // Ferma l'intervallo dopo 12 secondi
+    console.log("Carosello platformVidCarousel Interrotto!");
+}, 12000);
 
 let platformVidActive = 0;  // Variabile globale per tracciare l'immagine attiva
-
 function platformVidCarousel() {
     const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
 
