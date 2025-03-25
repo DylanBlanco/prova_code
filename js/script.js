@@ -487,6 +487,7 @@ const platformVid = [
 ];
 const carouselBoxImg = document.querySelector('.carousel-box-img');
 
+// Creazione delle immagini nel carousel
 for (let i = 0; i < platformVid.length ; i++) {
     console.log(platformVid[i]);
     if (i == 0) {
@@ -496,17 +497,25 @@ for (let i = 0; i < platformVid.length ; i++) {
         carouselBoxImg.innerHTML += `<img src="${platformVid[i]}">`;
     }
 };
-setInterval(platformVidCarousel, 2000);
 
-const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
-let platformVidActive = 0;
+// Avvia il carosello con intervallo di 2 secondi
+setInterval(platformVidCarousel, 1500);
+
+let platformVidActive = 0;  // Variabile globale per tracciare l'immagine attiva
+
 function platformVidCarousel() {
+    const allImgCarouselBoxImg = document.querySelectorAll('.carousel-box-img > img');
+
+    // Rimuove la classe active dall'immagine corrente
     allImgCarouselBoxImg[platformVidActive].classList.remove('active');
+
+    // Cambia l'immagine attiva
     if (platformVidActive < platformVid.length - 1) {
-        platformVidActive ++;
+        platformVidActive++;
+    } else {
+        platformVidActive = 0;
     }
-    else {
-        platformVidActive = 0
-    };
+
+    // Aggiunge la classe active alla nuova immagine attiva
     allImgCarouselBoxImg[platformVidActive].classList.add('active');
 };
