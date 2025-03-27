@@ -527,3 +527,36 @@ function platformVidCarousel() {
     // Aggiunge la classe active alla nuova immagine attiva
     allImgCarouselBoxImg[platformVidActive].classList.add('active');
 };
+
+const classes = [
+    {
+      className: "Classe A",
+      students: [
+        { name: "Luca", age: 15 },
+        { name: "Giulia", age: 14 },
+        { name: "Marco", age: 15 }
+      ]
+    },
+    {
+      className: "Classe B",
+      students: [
+        { name: "Sara", age: 16 },
+        { name: "Davide", age: 17 },
+        { name: "Elena", age: 16 },
+        { name: "Antonio", age: 17 }
+      ]
+    },
+    {
+      className: "Classe C",
+      students: [
+        { name: "Francesca", age: 18 },
+        { name: "Matteo", age: 17 },
+        { name: "Alessia", age: 18 },
+        { name: "Giorgio", age: 17 },
+        { name: "Martina", age: 18 }
+      ]
+    }
+  ];
+  
+  console.log(classes);
+  
