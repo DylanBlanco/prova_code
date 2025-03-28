@@ -556,7 +556,37 @@ const classes = [
         { name: "Martina", age: 18 }
       ]
     }
-  ];
+];
   
-  console.log(classes);
-  
+const arrayClassi = document.getElementById('array-classi').innerHTML = `
+    <div class="card">
+        <div class="card-body">
+            <div>
+                <h4>Classe</h4>
+            </div>
+            <hr class="text-primary">
+            <div class="d-flex gap-4">
+                <div>Nome: dylan</div>
+                <div>Ebtà: 27</div>
+            </div>
+        </div>
+    </div>
+`;
+
+// classes.forEach(cls => {
+//     const card = document.createElement('div');
+//     card.classList.add('col-md-4', 'mb-4');
+//     card.innerHTML = `
+//         <div class="card shadow">
+//             <div class="card-header bg-primary text-white">
+//                 <h5 class="mb-0">${cls.className}</h5>
+//             </div>
+//             <div class="card-body">
+//                 <ul class="list-group list-group-flush">
+//                     ${cls.students.map(student => `<li class="list-group-item">${student.name} - ${student.age} anni</li>`).join('')}
+//                 </ul>
+//             </div>
+//         </div>
+//     `;
+//     arrayClassi.appendChild(card);
+// });
