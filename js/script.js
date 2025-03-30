@@ -557,36 +557,26 @@ const classes = [
       ]
     }
 ];
-  
-const arrayClassi = document.getElementById('array-classi').innerHTML = `
-    <div class="card">
-        <div class="card-body">
-            <div>
-                <h4>Classe</h4>
-            </div>
-            <hr class="text-primary">
-            <div class="d-flex gap-4">
-                <div>Nome: dylan</div>
-                <div>Ebtà: 27</div>
-            </div>
-        </div>
-    </div>
-`;
 
-// classes.forEach(cls => {
-//     const card = document.createElement('div');
-//     card.classList.add('col-md-4', 'mb-4');
-//     card.innerHTML = `
-//         <div class="card shadow">
-//             <div class="card-header bg-primary text-white">
-//                 <h5 class="mb-0">${cls.className}</h5>
-//             </div>
-//             <div class="card-body">
-//                 <ul class="list-group list-group-flush">
-//                     ${cls.students.map(student => `<li class="list-group-item">${student.name} - ${student.age} anni</li>`).join('')}
-//                 </ul>
-//             </div>
-//         </div>
-//     `;
-//     arrayClassi.appendChild(card);
-// });
+const arrayClassi = document.getElementById('array-classi');
+  
+    classes.forEach(cls => {
+        let studentList = cls.students.map(student => `
+            <div class="d-flex justify-content-between">
+                <div><strong>Nome:</strong> ${student.name}</div>
+                <div><strong>Età:</strong> ${student.age}</div>
+            </div>
+        `).join('');
+
+        arrayClassi.innerHTML += `
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div>
+                        <h4>${cls.className}</h4>
+                    </div>
+                    <hr class="text-primary">
+                    ${studentList}
+                </div>
+            </div>
+        `;
+    });
