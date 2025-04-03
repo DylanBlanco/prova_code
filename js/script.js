@@ -619,3 +619,30 @@ arrayMap.innerHTML = cars.map((car, index, allArray) => `
         </div>
     </div>
 `).join(''); // Unisce tutto in una stringa senza virgole
+
+const allCars = [
+    { brand: "Tesla", model: "Model 3", year: 2022, color: "Rosso" },
+    { brand: "BMW", model: "X5", year: 2020, color: "Nero" },
+    { brand: "Audi", model: "A3", year: 2019, color: "Bianco" },
+    { brand: "Mercedes", model: "GLA", year: 2021, color: "Grigio" },
+    { brand: "Fiat", model: "500", year: 2018, color: "Blu" }
+];
+
+const filteredCars = allCars.filter(car => car.year >= 2020); // Filtra solo le macchine dal 2020 in poi
+
+const arrayFilter = document.getElementById("array-filter");
+
+arrayFilter.innerHTML = filteredCars.map(car => `
+    <div class="shadow">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">${car.brand} ${car.model}</h5>
+                <p class="card-text">
+                    <strong>Anno:</strong> ${car.year} <br>
+                    <strong>Colore:</strong> ${car.color}
+                </p>
+                <span class="badge bg-success">Anno: ${car.year}</span>
+            </div>
+        </div>
+    </div>
+`).join('');
