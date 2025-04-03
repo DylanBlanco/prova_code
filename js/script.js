@@ -598,7 +598,7 @@ const arrayMap = document.getElementById('array-map');
 arrayMap.innerHTML = cars.map((car, index, allArray) => `
     <div class="card mb-3">
         <div class="card-body">
-            <div>
+            <div class="badge text-bg-primary rounded-pill">
                 ${index + 1}
             </div>
             <div>
