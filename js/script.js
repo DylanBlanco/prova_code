@@ -595,7 +595,7 @@ const cars = [
 
 const arrayMap = document.getElementById('array-map');
 
-cars.map((car, index, allArray) => `
+arrayMap.innerHTML = cars.map((car, index, allArray) => `
     <div class="card mb-3">
         <div class="card-body">
             <div>
