@@ -563,7 +563,7 @@ const arrayClassi = document.getElementById('array-classi');
 //  ForEach 
 classes.forEach((cls) => {
     let studentList = "";
-    cls.students.forEach(student => {
+    cls.students.forEach((student) => {
         studentList += `
             <div class="d-flex justify-content-between">
                 <div><strong>Nome:</strong> ${student.name}</div>
@@ -595,33 +595,27 @@ const cars = [
 
 const arrayMap = document.getElementById('array-map');
 
-const carList = cars.map((car, index) => 
-    `${index + 1}. ${car.brand} ${car.model} - Anno: ${car.year} - Colore: ${car.color}`
-).join('\n');
+cars.map((car, index, allArray) => `
+    <div class="card mb-3">
+        <div class="card-body">
+            <div>
+                ${index + 1}
+            </div>
+            <div>
+                <h4>${car.brand}</h4>
+            </div>
+            <hr class="text-primary">
+            <div>
+                <p>${car.model}</p>
+                <p>${car.year}</p>
+                <p>${car.color}</p>
+            </div>
+        </div>
 
-// arrayMap.innerHTML = carList;
-// console.log(carList);
+        <hr class="text-primary">
 
-
-// console.log(cars);
-
-// arrayClassi.innerHTML = classes.map(cls => {
-//     let studentList = cls.students.map(student => `
-//         <div class="d-flex justify-content-between">
-//             <div><strong>Nome:</strong> ${student.name}</div>
-//             <div><strong>Età:</strong> ${student.age}</div>
-//         </div>
-//     `).join(''); // Unisce gli elementi in una singola stringa
-
-//     return `
-//         <div class="card mb-3">
-//             <div class="card-body">
-//                 <div>
-//                     <h4>${cls.className}</h4>
-//                 </div>
-//                 <hr class="text-primary">
-//                 ${studentList}
-//             </div>
-//         </div>
-//     `;
-// }).join(''); // Unisce tutte le card in un'unica stringa da inserire nel DOM
+        <div>
+            <p>Totale macchine: <h5>${allArray.length}</h5></p>
+        </div>
+    </div>
+`).join(''); // Unisce tutto in una stringa senza virgole
