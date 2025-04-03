@@ -528,6 +528,7 @@ function platformVidCarousel() {
     allImgCarouselBoxImg[platformVidActive].classList.add('active');
 };
 
+// FOREACH - è usato per iterare e modificare variabili esterne
 const classes = [
     {
       className: "Classe A",
@@ -559,32 +560,17 @@ const classes = [
 ];
 
 const arrayClassi = document.getElementById('array-classi');
-
-// classes.forEach((cls) => {
-//     arrayClassi.innerHTML += `
-//         <div class="card mb-3">
-//             <div class="card-body">
-//                 <div>
-//                     <h4>${cls.className}</h4>
-//                 </div>
-//                 <hr class="text-primary">
-//                 <div class="d-flex justify-content-between">
-//                     <div><strong>Nome:</strong> ${[cls.student].name}</div>
-//                     <div><strong>Età:</strong> ${[cls.student].age}</div>
-//                 </div>
-//             </div>
-//         </div>
-//     `;
-// });
-
-classes.forEach(cls => {
-    let studentList = cls.students.map(student => `
-        <div class="d-flex justify-content-between">
-            <div><strong>Nome:</strong> ${student.name}</div>
-            <div><strong>Età:</strong> ${student.age}</div>
-        </div>
-    `).join('');
-
+//  ForEach 
+classes.forEach((cls) => {
+    let studentList = "";
+    cls.students.forEach(student => {
+        studentList += `
+            <div class="d-flex justify-content-between">
+                <div><strong>Nome:</strong> ${student.name}</div>
+                <div><strong>Età:</strong> ${student.age}</div>
+            </div>
+        `;
+    });
     arrayClassi.innerHTML += `
         <div class="card mb-3">
             <div class="card-body">
@@ -597,3 +583,45 @@ classes.forEach(cls => {
         </div>
     `;
 });
+
+// MAP - restituisce un nuovo array, quindi è più utile quando devi trasformare i dati
+const cars = [
+    { brand: "Tesla", model: "Model 3", year: 2022, color: "Rosso" },
+    { brand: "BMW", model: "X5", year: 2020, color: "Nero" },
+    { brand: "Audi", model: "A3", year: 2019, color: "Bianco" },
+    { brand: "Mercedes", model: "GLA", year: 2021, color: "Grigio" },
+    { brand: "Fiat", model: "500", year: 2018, color: "Blu" }
+];
+
+const arrayMap = document.getElementById('array-map');
+
+const carList = cars.map((car, index) => 
+    `${index + 1}. ${car.brand} ${car.model} - Anno: ${car.year} - Colore: ${car.color}`
+).join('\n');
+
+// arrayMap.innerHTML = carList;
+// console.log(carList);
+
+
+// console.log(cars);
+
+// arrayClassi.innerHTML = classes.map(cls => {
+//     let studentList = cls.students.map(student => `
+//         <div class="d-flex justify-content-between">
+//             <div><strong>Nome:</strong> ${student.name}</div>
+//             <div><strong>Età:</strong> ${student.age}</div>
+//         </div>
+//     `).join(''); // Unisce gli elementi in una singola stringa
+
+//     return `
+//         <div class="card mb-3">
+//             <div class="card-body">
+//                 <div>
+//                     <h4>${cls.className}</h4>
+//                 </div>
+//                 <hr class="text-primary">
+//                 ${studentList}
+//             </div>
+//         </div>
+//     `;
+// }).join(''); // Unisce tutte le card in un'unica stringa da inserire nel DOM
