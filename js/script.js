@@ -647,3 +647,11 @@ arrayFilter.innerHTML = filteredCars.map(car => `
         </div>
     </div>
 `).join('');
+
+// Rubrica Search
+const persone = [
+    { nome: 'Luca', cognome: 'Rossi', telefono: '123-456-7890' },
+    { nome: 'Anna', cognome: 'Bianchi', telefono: '234-567-8901' },
+    { nome: 'Marco', cognome: 'Verdi', telefono: '345-678-9012' },
+    { nome: 'Giulia', cognome: 'Neri', telefono: '456-789-0123' }
+];
