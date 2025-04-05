@@ -620,6 +620,7 @@ arrayMap.innerHTML = cars.map((car, index, allArray) => `
     </div>
 `).join(''); // Unisce tutto in una stringa senza virgole
 
+// FILTER
 const allCars = [
     { brand: "Tesla", model: "Model 3", year: 2022, color: "Rosso" },
     { brand: "BMW", model: "X5", year: 2020, color: "Nero" },
