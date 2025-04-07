@@ -649,9 +649,25 @@ arrayFilter.innerHTML = filteredCars.map(car => `
 `).join('');
 
 // Rubrica Search
-const persone = [
+const persons = [
     { nome: 'Luca', cognome: 'Rossi', telefono: '123-456-7890' },
     { nome: 'Anna', cognome: 'Bianchi', telefono: '234-567-8901' },
     { nome: 'Marco', cognome: 'Verdi', telefono: '345-678-9012' },
     { nome: 'Giulia', cognome: 'Neri', telefono: '456-789-0123' }
 ];
+
+const rubric = document.getElementById('rubric');
+rubric.innerHTML = persons.map((person, index, allArray) => `
+    <div class="card mb-2">
+        <div class="card-body">
+            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <span>nome: ${person.nome} </span>
+                <span>cognome: ${person.cognome} </span>
+            </div>
+            <hr>
+            <div>
+                N.Telefono: <br> ${person.telefono}
+            </div>
+        </div>
+    </div>
+`).join('');
