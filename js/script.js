@@ -680,7 +680,7 @@ function mostraLista(lista) {
 
 mostraLista(persons);  // visualizza rubrica tramite funzione
 
-// Evento filtra ricerca
+// Evento - filtra in base a ricerca
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();  // toLowerCase() - trasforma una stringa in lettere minuscole, senza modificare l'originale
     const filtrati = persons.filter(p =>
@@ -691,6 +691,7 @@ searchInput.addEventListener('input', () => {
     mostraLista(filtrati);  // Mostra lista in base ai filtrati
 });
 
+// Reset Button
 resetBtn.addEventListener('click', () => {
     searchInput.value = '';
     mostraLista(persons);
