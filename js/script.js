@@ -656,18 +656,39 @@ const persons = [
     { nome: 'Giulia', cognome: 'Neri', telefono: '456-789-0123' }
 ];
 
-const rubric = document.getElementById('rubric');
-rubric.innerHTML = persons.map((person, index, allArray) => `
-    <div class="card mb-2">
-        <div class="card-body">
-            <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <span>nome: ${person.nome} </span>
-                <span>cognome: ${person.cognome} </span>
-            </div>
-            <hr>
-            <div>
-                N.Telefono: <br> ${person.telefono}
-            </div>
-        </div>
-    </div>
-`).join('');
+// Recupera ID Document
+const searchInput = document.getElementById('searchInput');
+const listaPersone = document.getElementById('listaPersone');
+const resetBtn = document.getElementById('resetBtn');
+
+// Funzione mostra lista - rubrica
+function mostraLista(lista) {
+    listaPersone.innerHTML = '';
+    if (lista.length === 0) {
+    listaPersone.innerHTML = '<div class="alert alert-warning"> Nessun risultato trovato. </div>';
+    return;
+    }
+    lista.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+    div.innerHTML = `<strong>${p.nome} ${p.cognome}</strong><span class="text-muted">${p.telefono}</span>`;
+    listaPersone.appendChild(div);
+    });
+}
+
+mostraLista(persons);
+
+searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    const filtrati = persons.filter(p =>
+    p.nome.toLowerCase().includes(query) ||
+    p.cognome.toLowerCase().includes(query) ||
+    p.telefono.toLowerCase().includes(query)
+    );
+    mostraLista(filtrati);
+});
+
+resetBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    mostraLista(persons);
+});
