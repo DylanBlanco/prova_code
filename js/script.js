@@ -665,27 +665,30 @@ const resetBtn = document.getElementById('resetBtn');
 function mostraLista(lista) {
     listaPersone.innerHTML = '';
     if (lista.length === 0) {
-    listaPersone.innerHTML = '<div class="alert alert-warning"> Nessun risultato trovato. </div>';
-    return;
+        listaPersone.innerHTML = '<div class="alert alert-warning"> Nessun risultato trovato. </div>';
+        return;
     }
-    lista.forEach(p => {
-    const div = document.createElement('div');
-    div.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
-    div.innerHTML = `<strong>${p.nome} ${p.cognome}</strong><span class="text-muted">${p.telefono}</span>`;
-    listaPersone.appendChild(div);
-    });
+    else {
+        lista.forEach(p => {
+            const div = document.createElement('div'); // crea elemento DIV
+            div.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+            div.innerHTML = `<strong>${p.nome} ${p.cognome}</strong><span class="text-muted">${p.telefono}</span>`;
+            listaPersone.appendChild(div);
+        });
+    }
 }
 
-mostraLista(persons);
+mostraLista(persons);  // visualizza rubrica tramite funzione
 
+// Evento filtra ricerca
 searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
+    const query = searchInput.value.toLowerCase();  // toLowerCase() - trasforma una stringa in lettere minuscole, senza modificare l'originale
     const filtrati = persons.filter(p =>
-    p.nome.toLowerCase().includes(query) ||
+    p.nome.toLowerCase().includes(query) ||  // includes() - verifica se una stringa o un array contiene un determinato elemento
     p.cognome.toLowerCase().includes(query) ||
     p.telefono.toLowerCase().includes(query)
     );
-    mostraLista(filtrati);
+    mostraLista(filtrati);  // Mostra lista in base ai filtrati
 });
 
 resetBtn.addEventListener('click', () => {
