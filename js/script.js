@@ -697,21 +697,68 @@ resetBtn.addEventListener('click', () => {
     mostraLista(persons);  // Mostra intera rubrica
 });
 
-// Destructuring - Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili
-cat = {
-    name: 'felix',
-    type: 'siberiano',
-    color: 'red',
-    age: '3',
-    toys: [
-        'palla',
-        'gomitolo',
-        'pupazzo',
-    ],
-};
 
+//  Destructuring - Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili
+const cats = [
+    {
+        nome: "Milo",
+        razza: "Siamese",
+        colore: "Beige e marrone",
+        anni: 3,
+        giocattoli: ["topolino di stoffa", "pallina rumorosa", "cordicella"]
+    },
+    {
+        nome: "Luna",
+        razza: "Maine Coon",
+        colore: "Grigio tigrato",
+        anni: 5,
+        giocattoli: ["piume", "tunnel", "laser"]
+    },
+    {
+        nome: "Oliver",
+        razza: "Europeo",
+        colore: "Bianco e arancione",
+        anni: 2,
+        giocattoli: ["scatola di cartone", "palla con erba gatta", "topo meccanico"]
+    },
+    {
+        nome: "Nala",
+        razza: "Bengala",
+        colore: "Maculato dorato",
+        anni: 4,
+        giocattoli: ["corda con campanella", "tubo elastico", "pesce in peluche"]
+    }
+];
+
+//  Recupero ID
 const descriptionDestr = document.getElementById('description-destr');
+const arrayDestr = document.getElementById('array-destr');
+const stampDestr = document.getElementById('stamp-destr');
+
+//  Crea nuovo <p> - descrizione Destructuring
 const newP = document.createElement('p');  // Crea un nuovo <p>
 newP.classList.add('fs-6');  // Aggiunge una classe
 newP.textContent = 'Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili.';  // Aggiunge testo  
 descriptionDestr.appendChild(newP);  // Aggiunge il div dentro #contenitore
+
+arrayDestr.innerHTML = cats.map((cat,index) => `
+    <div class="card mb-3">
+        <div class="row">
+            <div>
+                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
+                    <span>${cat.nome}</span>
+                    <span>${cat.razza}</span>
+                </div>
+                
+                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
+                    <span>${cat.colore}</span>
+                    <span>${cat.anni}</span>
+                </div>
+                
+                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
+                    <span>toy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+`).join('');
