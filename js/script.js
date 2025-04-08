@@ -693,6 +693,20 @@ searchInput.addEventListener('input', () => {
 
 // Reset Button
 resetBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    mostraLista(persons);
+    searchInput.value = '';  // Svuota barra di ricerca
+    mostraLista(persons);  // Mostra intera rubrica
 });
+
+// Destructuring - Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili
+cat = {
+    name: 'felix',
+    type: 'siberiano',
+    color: 'red',
+    age: '3',
+    toys: [
+        'palla',
+        'gomitolo',
+        'pupazzo',
+    ],
+};
+
