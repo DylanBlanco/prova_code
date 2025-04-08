@@ -710,3 +710,8 @@ cat = {
     ],
 };
 
+const descriptionDestr = document.getElementById('description-destr');
+const newP = document.createElement('p');  // Crea un nuovo <p>
+newP.classList.add('fs-6');  // Aggiunge una classe
+newP.textContent = 'Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili.';  // Aggiunge testo  
+descriptionDestr.appendChild(newP);  // Aggiunge il div dentro #contenitore
