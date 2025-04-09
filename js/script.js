@@ -741,7 +741,7 @@ newP.classList.add('fs-6');  // Aggiunge una classe
 newP.textContent = 'Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili.';  // Aggiunge testo  
 descriptionDestr.appendChild(newP);  // Aggiunge il div dentro #contenitore
 
-//  Create Card
+//  Create Card dell'Array
 arrayDestr.innerHTML = cats.map((cat,index) => `
     <div class="card mb-3">
         <div class="card-body">
@@ -750,8 +750,30 @@ arrayDestr.innerHTML = cats.map((cat,index) => `
                 <div class="text-start"><b>Razza:</b> ${cat.razza},</div>
                 <div class="text-start"><b>Colore:</b> ${cat.colore},</div>
                 <div class="text-start"><b>Anni:</b> ${cat.anni},</div>
-                <div class="text-start"><b>Toys:</b> ${cat.giocattoli.join(" - ")}</div>
+                <div class="text-start"><b>Toys:</b >${cat.giocattoli.join(',<br>')}</div>
             </div>
         </div>
     </div>
 `).join('');
+
+//  Card Destructuring
+cats.forEach(cat => {
+    const { nome, razza } = cat;  // Destructuring per nome e razza - recupero di alcuni elementi dall'object
+
+    const col = document.createElement('div');
+
+    const card = document.createElement('div');
+    card.className = 'card shadow mb-3';
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+
+    cardBody.innerHTML = `
+      <h5 class="card-title">${nome}</h5>
+      <p class="card-text"><strong>Razza:</strong> ${razza}</p>
+    `;
+
+    card.appendChild(cardBody);
+    col.appendChild(card);
+    stampDestr.appendChild(col);
+});
