@@ -741,23 +741,16 @@ newP.classList.add('fs-6');  // Aggiunge una classe
 newP.textContent = 'Permette di estrarre gli elementi da un array o da un oggetto e di assegnarli a variabili.';  // Aggiunge testo  
 descriptionDestr.appendChild(newP);  // Aggiunge il div dentro #contenitore
 
+//  Create Card
 arrayDestr.innerHTML = cats.map((cat,index) => `
     <div class="card mb-3">
-        <div class="row">
-            <div>
-                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
-                    <span>${cat.nome}</span>
-                    <span>${cat.razza}</span>
-                </div>
-                
-                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
-                    <span>${cat.colore}</span>
-                    <span>${cat.anni}</span>
-                </div>
-                
-                <div class="list-group-item list-group-item-action d-flex justify-content-around align-items-center">
-                    <span>toy</span>
-                </div>
+        <div class="card-body">
+            <div class="list-group-item list-group-item-action">
+                <div class="text-start"><b>Nome:</b> ${cat.nome},</div>
+                <div class="text-start"><b>Razza:</b> ${cat.razza},</div>
+                <div class="text-start"><b>Colore:</b> ${cat.colore},</div>
+                <div class="text-start"><b>Anni:</b> ${cat.anni},</div>
+                <div class="text-start"><b>Toys:</b> ${cat.giocattoli.join(" - ")}</div>
             </div>
         </div>
     </div>
